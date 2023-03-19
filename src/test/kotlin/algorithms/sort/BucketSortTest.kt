@@ -12,7 +12,10 @@ class BucketSortTest {
 
     @Test
     fun testBucketSort() {
-        val arr = intArrayOf(78, 17, 39, 26, 72, 94, 21, 12, 23, 68)
+        val arr = intArrayOf(1,1,1,1)
+//        val arr = intArrayOf(2,1,1,1)
+//        val arr = intArrayOf(3,6,9,1)
+//        val arr = intArrayOf(1,10000000)
         val biggestGap = BucketSort.biggestGap(arr)
         println("biggestGap = $biggestGap")
     }

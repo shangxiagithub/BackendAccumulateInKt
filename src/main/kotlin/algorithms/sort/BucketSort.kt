@@ -10,8 +10,8 @@ class BucketSort {
             val min = target.min()
             val max = target.max()
 
-            val d = (max - min) / (n - 1)
-            val bucketSize = (max - min) / d + 1
+            val d = 1.coerceAtLeast(max.minus(min) / (n - 1))
+            val bucketSize = max.minus(min) / d + 1
 
             val tempBucket = Array(bucketSize) { IntArray(2) }
 
@@ -21,7 +21,7 @@ class BucketSort {
             }
 
             for (num in target) {
-                val idx = (num - min) / d
+                val idx = num.minus(min) / d
                 if (tempBucket[idx][0] == -1) {
                     tempBucket[idx][0] = num
                     tempBucket[idx][1] = num
